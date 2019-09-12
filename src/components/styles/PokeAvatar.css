@@ -6,11 +6,7 @@
   color: white;
   text-align: center;
   background-color: rgb(104, 70, 133);
-}
-
-#image{
-  background-image: url('https://cdn.bulbagarden.net/upload/2/21/001Bulbasaur.png');
   background-size: 100%;
-  height: 1fr;
-  width: 1fr;
+  height: 100px;
+  width: 100px;
 }
