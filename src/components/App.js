@@ -1,7 +1,9 @@
 import React from 'react';
-import './styles/App.css';
+// import './styles/App.css';
 import PokeList from './PokeList.js';
 import PokeInfo from './PokeInfo';
+// import PokeAvatar from './PokeAvatar';
+
 
 class App extends React.Component {
   constructor() {
@@ -11,10 +13,16 @@ class App extends React.Component {
 
   render() {
     return(
-      <div className='App'>
-        <PokeList className='poke-list' />
-        <PokeInfo />
-      </div> 
+      <div className='container'>
+        <div className='row'>
+          <div className="col-6">
+            <PokeList />
+          </div>
+          <div className='col-6'>
+            <PokeInfo />
+          </div>
+        </div>
+      </div>
     )
   }
 }

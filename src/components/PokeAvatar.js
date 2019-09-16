@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles/PokeAvatar.css';
+// import './styles/PokeAvatar.css';
 
 export default class PokeAvatar extends Component {
 
@@ -23,7 +23,7 @@ export default class PokeAvatar extends Component {
 
   render() {
     return (
-      <div className='avatar'> <p> {this.state.name} </p> </div>
+      <div className='col-4'><p> {this.state.name} </p> </div>
     )
   }
 }

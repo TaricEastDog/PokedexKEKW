@@ -1,4 +1,4 @@
-.App {
+/* .App {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,13 +6,13 @@
   width: 938px;
   height: 540px;
   margin: 100px auto;
-  padding-left: 10px;
+  padding-left: 10px; */
   /* border-color: rgb(75, 16, 36);
   border-style: solid; */
-  border-width: 2px;
+  /* border-width: 2px;
   border-radius: 5px 5px 5px 50px;
   box-shadow: 0 14px 45px rgba(0, 0, 0, 0.33), 0 18px 45px rgba(0, 0, 0, 0.22);
-}
+} */
 
 /* .poke-list{
   size: auto;

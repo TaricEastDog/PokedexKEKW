@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/PokeList.css';
+// import './styles/PokeList.css';
 import PokeAvatar from './PokeAvatar.js';
 import Axios from 'axios';
 
@@ -19,9 +19,9 @@ class PokeList extends React.Component {
 
   render() {
     return (
-      <>
-        {this.state.pokemon ? (<div className='list-container'> 
-          {this.state.pokemon.map(pokemon => <PokeAvatar 
+      <div className='container'>
+        {this.state.pokemon ? (<div className='row'> 
+          {this.state.pokemon.map(pokemon => <PokeAvatar
             key={pokemon.name}
             url={pokemon.url}
             name={pokemon.name}
@@ -29,7 +29,7 @@ class PokeList extends React.Component {
           />)}
         </div>) : ("asdas")
         }
-      </>
+      </div>
     )
   }
 }
