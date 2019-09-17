@@ -7,14 +7,14 @@ class PokeList extends React.Component {
 
     state = {
       url: 'https://pokeapi.co/api/v2/pokemon/',
-      pokemon: null
+      pokemon: null,
     }
 
   
 
   async componentDidMount() {
     const res = await Axios.get(this.state.url);
-    this.setState({pokemon: res.data['results'] });
+    this.setState({pokemon: res.data['results']});
   }
 
   render() {
@@ -24,8 +24,7 @@ class PokeList extends React.Component {
           {this.state.pokemon.map(pokemon => <PokeAvatar
             key={pokemon.name}
             url={pokemon.url}
-            name={pokemon.name}
-            image={pokemon.sprites}          
+            name={pokemon.name}         
           />)}
         </div>) : ("asdas")
         }

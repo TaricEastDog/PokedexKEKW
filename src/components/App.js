@@ -16,7 +16,7 @@ class App extends React.Component {
       <div className='container'>
         <div className='row'>
           <div className="col-6">
-            <PokeList />
+            <PokeList />  
           </div>
           <div className='col-6'>
             <PokeInfo />
