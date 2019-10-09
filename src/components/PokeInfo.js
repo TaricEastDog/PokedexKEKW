@@ -3,13 +3,19 @@ import { CurrentPokemonConsumer } from './Context.js';
 
 
 export default class PokeInfo extends Component {
+  state= {
+    curretId: ''
+  }
+
+
+
   render() {
     return (
       <CurrentPokemonConsumer>
-        {({clickedId}) => (
-          <div>
-            {clickedId}
-          </div>
+        {(context) => (
+          <React.Fragment>
+            <p>{context.clickedId}</p>
+          </React.Fragment>
         )}
       </CurrentPokemonConsumer>
       

@@ -7,14 +7,16 @@ export class CurrentPokemonProvider extends Component {
     clickedId: 1
   }
 
-  handleClick = () => {this.setState({ clickedId: this.state.clickedId + 1 })}
+  handleClick = () => {
+    const clickedId = this.props.currentId;
+    this.setState({clickedId: clickedId})
+  }
 
   render() {
     return (
       <CurrentPokemonContext.Provider value={{
-        clickedId: this.state.clickedId,
-        handleClick: this.handleClick
-      
+        handleClick: this.handleClick,
+        clickedId: this.state.clickedId
       }}>
         {this.props.children}
       </CurrentPokemonContext.Provider>

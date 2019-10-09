@@ -28,10 +28,13 @@ export default class PokeAvatar extends Component {
         <div className='card-body'>
           <h5 className='card-title'>{this.state.pokeId}</h5>
           <p className='card-text'>{this.state.pokeName}</p>
-          <CurrentPokemonConsumer>
+          <CurrentPokemonConsumer 
+            key={this.state.pokeId} 
+            currentId={this.state.pokeId}
+          >
             {(context) => (
               <React.Fragment>
-                <button onClick={context.handleClick}></button> 
+                <button onClick={context.handleClick}>{this.state.pokeName}</button> 
               </React.Fragment>)}
           </CurrentPokemonConsumer>
         </div>
