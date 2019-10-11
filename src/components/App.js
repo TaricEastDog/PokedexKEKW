@@ -6,9 +6,14 @@ import PokeInfo from './PokeInfo';
 
 
 class App extends React.Component {
-  constructor() {
-    super()
-    this.state = {};
+  state = {
+    clickedId: 1
+  }
+
+  handleData = (data) => {
+    this.setState({
+      clickedId: data
+    });
   }
 
   render() {
@@ -16,10 +21,13 @@ class App extends React.Component {
       <div className='container'>
         <div className='row'>
           <div className="col-6">
-            <PokeList />  
+            <PokeList 
+            clickedId={this.state.clickedId}
+            handlerFromApp={this.handleData}
+            />  
           </div>
           <div className='col-6'>
-            <PokeInfo />
+            <PokeInfo clickedId={this.state.clickedId} />
           </div>
         </div>
       </div>

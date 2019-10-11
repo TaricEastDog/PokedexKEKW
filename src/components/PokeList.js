@@ -1,7 +1,7 @@
 import React from 'react';
 // import './styles/PokeList.css';
 import PokeAvatar from './PokeAvatar.js';
-import Axios from 'axios';
+import axios from 'axios';
 
 class PokeList extends React.Component {
 
@@ -13,7 +13,7 @@ class PokeList extends React.Component {
   
 
   async componentDidMount() {
-    const res = await Axios.get(this.state.url);
+    const res = await axios.get(this.state.url);
     this.setState({pokemon: res.data['results']});
   }
 
@@ -24,7 +24,9 @@ class PokeList extends React.Component {
           {this.state.pokemon.map(pokemon => <PokeAvatar
             key={pokemon.name}
             url={pokemon.url}
-            name={pokemon.name}         
+            name={pokemon.name}  
+            clickedId={this.props.clickedId}    
+            {...this.props}   
           />)}
         </div>) : ("asdas")
         }
