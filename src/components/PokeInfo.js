@@ -35,6 +35,7 @@ export default class PokeInfo extends Component {
           res.data.flavor_text_entries.some(flavor => {
             if (flavor.language.name === 'en') {
               pokeDescription = flavor.flavor_text;
+              return;
             }
           });
           this.setState({
@@ -44,7 +45,7 @@ export default class PokeInfo extends Component {
       
       this.setState({
         pokeName: pokeName.charAt(0).toUpperCase() + pokeName.slice(1),
-        pokeId,
+        pokeId: `${pokeId}`,
         pokeWeight,
         pokeHeight,
         pokeSpriteUrl,
@@ -56,8 +57,27 @@ export default class PokeInfo extends Component {
 
   render() {
     return (
-      <div className='info-container'>
-        {this.state.pokeName}
+      <div className='row'>
+        <div className="col-md-3">
+          <img src={this.state.pokeSpriteUrl} className='img-fluid' alt={this.state.pokeName} />
+        </div>
+        <div className="col-md-9 text-right">
+          <div className="col-md-4 text-right px-2">
+            <h4>{this.state.pokeName}</h4>
+          </div>
+          <div className="row">
+            <div className="col-md-4 text-right px-1">
+              <p className='mb-1'>{this.state.pokeId ? 'Pokemon ID: ' : ''}</p>
+              <p className='mb-1'>{this.state.pokeId ? 'Weight: ' : ''}</p>
+              <p className='mb-1'>{this.state.pokeId ? 'Height: ' : ''}</p>
+            </div>
+            <div className="col-md-8 text-left px-1">
+              <p className='mb-1'>{this.state.pokeId ?  ' #' + this.state.pokeId.padStart(3, '0') : ''}</p>
+              <p className='mb-1'>{this.state.pokeId ? this.state.pokeWeight / 1000 + ' kg' : ''}</p>
+              <p className='mb-1'>{this.state.pokeId ? this.state.pokeHeight  + ' cm' : ''}</p>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
