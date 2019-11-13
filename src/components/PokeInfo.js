@@ -57,26 +57,31 @@ export default class PokeInfo extends Component {
 
   render() {
     return (
-      <div className='row'>
-        <div className="col-md-3">
-          <img src={this.state.pokeSpriteUrl} className='img-fluid' alt={this.state.pokeName} />
+      <div className="container sticky-info">
+        <div className='row '>
+          <div className="col-4 p-0">
+            <img src={this.state.pokeSpriteUrl} className='p-0 m-0 w-100' alt={this.state.pokeName} />
+          </div>
+          <div className="col-8 text-right">
+            <div className="row text-right px-1">
+              <h4>{this.state.pokeName}</h4>
+            </div>
+            <div className="row">
+              <div className="text-right px-1">
+                <p className='mb-1'>{this.state.pokeId ? 'PokeID: ' : ''}</p>
+                <p className='mb-1'>{this.state.pokeId ? 'Weight: ' : ''}</p>
+                <p className='mb-1'>{this.state.pokeId ? 'Height: ' : ''}</p>
+              </div>
+              <div className="text-left px-1">
+                <p className='mb-1'>{this.state.pokeId ?  ' #' + this.state.pokeId.padStart(3, '0') : ''}</p>
+                <p className='mb-1'>{this.state.pokeId ? this.state.pokeWeight / 1000 + ' kg' : ''}</p>
+                <p className='mb-1'>{this.state.pokeId ? this.state.pokeHeight  + ' cm' : ''}</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="col-md-9 text-right">
-          <div className="col-md-4 text-right px-2">
-            <h4>{this.state.pokeName}</h4>
-          </div>
-          <div className="row">
-            <div className="col-md-4 text-right px-1">
-              <p className='mb-1'>{this.state.pokeId ? 'Pokemon ID: ' : ''}</p>
-              <p className='mb-1'>{this.state.pokeId ? 'Weight: ' : ''}</p>
-              <p className='mb-1'>{this.state.pokeId ? 'Height: ' : ''}</p>
-            </div>
-            <div className="col-md-8 text-left px-1">
-              <p className='mb-1'>{this.state.pokeId ?  ' #' + this.state.pokeId.padStart(3, '0') : ''}</p>
-              <p className='mb-1'>{this.state.pokeId ? this.state.pokeWeight / 1000 + ' kg' : ''}</p>
-              <p className='mb-1'>{this.state.pokeId ? this.state.pokeHeight  + ' cm' : ''}</p>
-            </div>
-          </div>
+        <div className='row'>
+          <p className='mb-1 text-justify p-2'>{this.state.pokeId ? `${this.state.pokeDescription}` : ''}</p>
         </div>
       </div>
     )
