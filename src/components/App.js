@@ -20,13 +20,16 @@ class App extends React.Component {
     return(
       <div className='container'>
         <div className='row'>
-          <div className="col-6">
+          <div className="col-lg-8 col-md-6 col-xs-12 order-2 order-md-1">
             <PokeList 
             clickedId={this.state.clickedId}
             handlerFromApp={this.handleData}
             />  
           </div>
-          <div className='col-6'>
+          <div 
+          className='col-lg-4 col-md-6 col-xs-12 order-1 order-md-2'
+          style={{position: "sticky", top: "0px", background: 'white'}}
+          >
             <PokeInfo clickedId={this.state.clickedId} />
           </div>
         </div>

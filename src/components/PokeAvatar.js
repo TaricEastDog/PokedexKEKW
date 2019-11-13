@@ -30,10 +30,10 @@ export default class PokeAvatar extends Component {
 
   render() {
     return (
-      <div className='col-xl-4 col-lg-6 col-md-12'>
-        <div className="card">
-          <img src={this.state.pokemonUrl} className='card-img-top' alt={this.state.name} />
-          <div className="card-body">
+      <div className='col-lg-3 col-md-6 col-6'>
+        <div className="card mb-3 mt-3">
+          <img src={this.state.pokemonUrl} className='card-img-top p-0' alt={this.state.name} />
+          <div className="card-body text-center p-2">
             <h5 className="card-title">#{this.state.pokemonIndex.padStart(3, '0')} </h5> 
             <p className="card-text">{this.state.name.charAt(0).toUpperCase() + this.state.name.slice(1)}</p>
             <button className="btn btn-primary" onClick={this.handleClick}>Details</button> 
