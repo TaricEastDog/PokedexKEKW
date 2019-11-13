@@ -57,7 +57,7 @@ export default class PokeInfo extends Component {
 
   render() {
     return (
-      <div className="container" style={{position: "sticky", top: "0px"}}>
+      <div className="container sticky-info">
         <div className='row '>
           <div className="col-4 p-0">
             <img src={this.state.pokeSpriteUrl} className='p-0 m-0 w-100' alt={this.state.pokeName} />

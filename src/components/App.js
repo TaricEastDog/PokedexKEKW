@@ -1,8 +1,7 @@
 import React from 'react';
-// import './styles/App.css';
+import './styles/App.css';
 import PokeList from './PokeList.js';
 import PokeInfo from './PokeInfo';
-// import PokeAvatar from './PokeAvatar';
 
 
 class App extends React.Component {
@@ -27,9 +26,7 @@ class App extends React.Component {
             />  
           </div>
           <div 
-          className='col-lg-4 col-md-6 col-xs-12 order-1 order-md-2'
-          style={{position: "sticky", top: "0px", background: 'white'}}
-          >
+          className='sticky-info col-lg-4 col-md-6 col-xs-12 order-1 order-md-2'>
             <PokeInfo clickedId={this.state.clickedId} />
           </div>
         </div>
